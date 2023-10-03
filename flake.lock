@@ -72,6 +72,7 @@
         "vim:lspsaga.nvim": "vim:lspsaga.nvim",
         "vim:mini.nvim": "vim:mini.nvim",
         "vim:neodev.nvim": "vim:neodev.nvim",
+        "vim:neogit.nvim": "vim:neogit.nvim",
         "vim:null-ls.nvim": "vim:null-ls.nvim",
         "vim:nvim-autopairs": "vim:nvim-autopairs",
         "vim:nvim-cmp": "vim:nvim-cmp",
@@ -387,6 +388,22 @@
       "original": {
         "owner": "folke",
         "repo": "neodev.nvim",
+        "type": "github"
+      }
+    },
+    "vim:neogit.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1696280653,
+        "narHash": "sha256-4fKiuA7wzBPrtTeZDmOEQsCZWfUmPA08QW+SwOGiTr4=",
+        "owner": "NeogitOrg",
+        "repo": "neogit",
+        "rev": "ed99c59d7fda3ba5e2ce9a3adc0a8eb5ebfa6c8f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NeogitOrg",
+        "repo": "neogit",
         "type": "github"
       }
     },

@@ -258,6 +258,11 @@
         flake = false;
       };
 
+      "vim:neogit.nvim" = {
+        url = "github:NeogitOrg/neogit";
+        flake = false;
+      };
+
       # These require special treatment (ie, compilation), so we can't load them in bulk
       "telescope-fzf-native.nvim" = {
         url = "github:nvim-telescope/telescope-fzf-native.nvim";

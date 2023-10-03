@@ -76,6 +76,7 @@ keymap.set("i", "<D-v>", '<Esc>"+pi', {})
 local dap = require("dap")
 local tse = require('telescope').extensions
 local dapui = require("dapui")
+local neogit = require("ngit")
 
 vim.keymap.set("n", "<F5>", dap.continue, {})
 vim.keymap.set("n", "<F8>", dap.step_over, {})
