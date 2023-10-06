@@ -365,7 +365,11 @@
 
         defaultPackage = packages.neovim-dechnik;
         apps.neovim-dechnik = flake-utils.lib.mkApp {drv = packages.neovim-dechnik;};
-        defaultApp = apps.neovim-dechnik;
+        # defaultApp = apps.neovim-dechnik;
+        defaultApp = {
+          type = "app";
+          program = "${packages.neovim-dechnik}/bin/nvim";
+        };
         hydraJobs = packages;
 
         overlays.default = self.overlay;
