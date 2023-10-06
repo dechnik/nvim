@@ -78,6 +78,8 @@ local tse = require('telescope').extensions
 local dapui = require("dapui")
 local neogit = require("ngit")
 
+keymap.set("n", "<leader>gg", "<cmd>:Neogit<cr>", {})
+
 vim.keymap.set("n", "<F5>", dap.continue, {})
 vim.keymap.set("n", "<F8>", dap.step_over, {})
 vim.keymap.set("n", "<F9>", dap.step_into, {})
