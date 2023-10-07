@@ -263,6 +263,11 @@
         flake = false;
       };
 
+      "vim:harpoon" = {
+        url = "github:ThePrimeagen/harpoon";
+        flake = false;
+      };
+
       # These require special treatment (ie, compilation), so we can't load them in bulk
       "telescope-fzf-native.nvim" = {
         url = "github:nvim-telescope/telescope-fzf-native.nvim";
@@ -350,7 +355,7 @@
         };
       };
     }
-    // flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" ] (
+    // flake-utils.lib.eachSystem ["x86_64-linux" "aarch64-linux"] (
       system: let
         pkgs = import nixpkgs {
           inherit system;

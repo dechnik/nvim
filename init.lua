@@ -6,8 +6,8 @@ require("todo")
 require("lsp")
 
 local cmd = vim.cmd -- to execute Vim commands e.g. cmd('pwd')
-local fn = vim.fn -- to call Vim functions e.g. fn.bufnr()
-local g = vim.g -- a table to access global variables))
+local fn = vim.fn   -- to call Vim functions e.g. fn.bufnr()
+local g = vim.g     -- a table to access global variables))
 local opt = vim.opt
 local keymap = vim.keymap
 
@@ -25,10 +25,10 @@ cmd "set signcolumn=yes"
 -- g.tokyonight_style = "night"
 -- g.tokyonight_transparent = true
 
-opt.expandtab = true -- Use spaces instead of tabs
+opt.expandtab = true    -- Use spaces instead of tabs
 opt.shiftwidth = indent -- Size of an indent
-opt.smartindent = true -- Insert indents automatically
-opt.tabstop = indent -- Number of spaces tabs count for
+opt.smartindent = true  -- Insert indents automatically
+opt.tabstop = indent    -- Number of spaces tabs count for
 opt.completeopt = { "menu", "menuone", "noinsert", "noselect" }
 -- opt.completeopt = {"menuone", "noinsert", "noselect"}
 opt.hidden = true -- Enable modified buffers in background
@@ -53,7 +53,7 @@ keymap.set("n", "<leader>o", "m`o<Esc>``", {}) -- Insert a newline in normal mod
 keymap.set('n', '<leader>ff', vim.lsp.buf.format, {})
 
 keymap.set("n", "<leader>tt", "<cmd>:TroubleToggle<cr>", {}) -- Toggle trouble
-keymap.set("n", "<leader>to", "<cmd>:TodoTrouble<cr>", {}) -- Toggle trouble
+keymap.set("n", "<leader>to", "<cmd>:TodoTrouble<cr>", {})   -- Toggle trouble
 
 keymap.set("n", "<leader>h", "<cmd>:Lspsaga hover_doc<cr>", {})
 keymap.set("n", "<leader>r", "<cmd>:Lspsaga rename<cr>", {})
@@ -64,11 +64,11 @@ keymap.set('n', '<leader>s', "<cmd>:Lspsaga show_diagnostics<cr>", {})
 keymap.set("n", "<leader>dn", "<cmd>:Lspsaga diagnostic_jump_next<cr>", {})
 keymap.set("n", "<leader>dp", "<cmd>:Lspsaga diagnostic_jump_prev<cr>", {})
 
-keymap.set("n", "<A-Up>", "<cmd>:tabnew<cr>", {}) -- Alt + Arrow Up, new tab
-keymap.set("n", "<A-Left>", "<cmd>:tabprev<cr>", {}) -- Alt + Arrow Left, tab left
+keymap.set("n", "<A-Up>", "<cmd>:tabnew<cr>", {})     -- Alt + Arrow Up, new tab
+keymap.set("n", "<A-Left>", "<cmd>:tabprev<cr>", {})  -- Alt + Arrow Left, tab left
 keymap.set("n", "<A-Right>", "<cmd>:tabnext<cr>", {}) -- Alt + Arrow Right, tab right
-keymap.set("n", "<tab>", "<c-w>w", {}) -- tab, circular window shifting
-keymap.set("n", "<S-tab>", "<c-w>W", {}) -- shift tab
+keymap.set("n", "<tab>", "<c-w>w", {})                -- tab, circular window shifting
+keymap.set("n", "<S-tab>", "<c-w>W", {})              -- shift tab
 
 keymap.set("i", "<D-c>", '<Esc>"+yi', {})
 keymap.set("i", "<D-v>", '<Esc>"+pi', {})
@@ -76,19 +76,26 @@ keymap.set("i", "<D-v>", '<Esc>"+pi', {})
 local dap = require("dap")
 local tse = require('telescope').extensions
 local dapui = require("dapui")
-local neogit = require("ngit")
 
 keymap.set("n", "<leader>gg", "<cmd>:Neogit<cr>", {})
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
+vim.keymap.set("n", "<C-a>", mark.add_file, {})
+vim.keymap.set("n", "<C-h>", function() ui.nav_file(1) end)
+vim.keymap.set("n", "<C-j>", function() ui.nav_file(2) end)
+vim.keymap.set("n", "<C-k>", function() ui.nav_file(3) end)
+vim.keymap.set("n", "<C-l>", function() ui.nav_file(4) end)
 
 vim.keymap.set("n", "<F5>", dap.continue, {})
 vim.keymap.set("n", "<F8>", dap.step_over, {})
 vim.keymap.set("n", "<F9>", dap.step_into, {})
 vim.keymap.set("n", "<F10>", dap.step_out, {})
 vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, {})
-vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
+vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function()
   dapui.hover()
 end)
-vim.keymap.set({'n', 'v'}, '<Leader>dp', function()
+vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function()
   dapui.preview()
 end)
 
