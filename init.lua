@@ -63,6 +63,7 @@ keymap.set('n', '<leader>f', "<cmd>:Lspsaga lsp_finder<cr>", {})
 keymap.set('n', '<leader>s', "<cmd>:Lspsaga show_diagnostics<cr>", {})
 keymap.set("n", "<leader>dn", "<cmd>:Lspsaga diagnostic_jump_next<cr>", {})
 keymap.set("n", "<leader>dp", "<cmd>:Lspsaga diagnostic_jump_prev<cr>", {})
+keymap.set("n", "<leader>fa", "<cmd>:Telescope harpoon marks<cr>", {})
 
 keymap.set("n", "<A-Up>", "<cmd>:tabnew<cr>", {})     -- Alt + Arrow Up, new tab
 keymap.set("n", "<A-Left>", "<cmd>:tabprev<cr>", {})  -- Alt + Arrow Left, tab left
@@ -76,6 +77,7 @@ keymap.set("i", "<D-v>", '<Esc>"+pi', {})
 local dap = require("dap")
 local tse = require('telescope').extensions
 local dapui = require("dapui")
+local neogit = require("ngit")
 
 keymap.set("n", "<leader>gg", "<cmd>:Neogit<cr>", {})
 local mark = require("harpoon.mark")
