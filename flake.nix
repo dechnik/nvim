@@ -343,6 +343,15 @@
                 [
                   (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
                   telescopeFzfNative
+                  (sg-nvim.overrideAttrs {
+                    version = "2023-10-07";
+                    src = pkgs.fetchFromGitHub {
+                      owner = "sourcegraph";
+                      repo = "sg.nvim";
+                      rev = "d310284d2addb1092a2f36bb7bc207ca94ce5002";
+                      sha256 = "sha256-ODcNXI0oTRkt2cGGo4gnMYCrBKIPljV7bmFIfXWKjqI=";
+                    };
+                  })
                 ]
                 ++ vimPackages;
             };
